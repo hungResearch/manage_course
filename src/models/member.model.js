@@ -21,7 +21,7 @@ const memberSchema = new Schema({
         type: String,
         required: true
     },
-    stauts: {
+    status: {
         type: String,
         enum: ['inactive', 'active'],
         default: 'inactive'

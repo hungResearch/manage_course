@@ -1,11 +1,11 @@
 'use strict'
 const { model, Schema, Types} = require('mongoose')
 
-const DOCUMENT_NAME = 'KeyToken';
+const DOCUMENT_NAME = 'Key';
 const COLLECTION_NAME = 'KeyTokens';
 
 const keyTokenSchema = new Schema({
-    user_id: {
+    userId: {
         type: Schema.Types.ObjectId,
         required: true,
         ref: 'Member'
@@ -18,9 +18,13 @@ const keyTokenSchema = new Schema({
         type: String,
         required: true
     },
-    refreshToken: {
+    refreshTokensUsed: {
         type: Array,
         default: []
+    },
+    refreshToken: {
+        type: String,
+        required: true
     }
 },
 {
